@@ -12,8 +12,8 @@ IHEチュートリアル「FHIRの実装～HAPI FHIRでのPDQm対応～」用ソ
 ## MY_PATIENTテーブルの初期化
 PSQLコマンドでDDL\init.sqlを実行する。
 
-cd DDL
-psql -U postgres -d <DB名> -f init.sql
+1. cd DDL
+2. psql -U postgres -d <DB名> -f init.sql
 
 ## 設定方法
 src\main\resources\application.propertiesファイルを編集する
@@ -34,11 +34,11 @@ src\main\resources\application.propertiesファイルを編集する
 Patientリソースのidentifierのネームスペース
 
 ## ビルド方法(Eclipse)
-- Eclipse でプロジェクトを「既存 Maven プロジェクト」としてインポートする
-- プロジェクト・エクスローラーで「restful-server-example」を右クリックし、「実行」「Maven install」を順に選択する
+1. Eclipse でプロジェクトを「既存 Maven プロジェクト」としてインポートする
+2. プロジェクト・エクスローラーで「restful-server-example」を右クリックし、「実行」「Maven install」を順に選択する
 
 ## ビルド方法(Maven)
 プロジェクトのルートフォルダで「mvn install」を実行する。（mvnコマンドにパスが通っていること）
 
 ## デプロイ方法
-- ビルドで作成されたtarget\restful-server-example.warを\apache-tomcat-9.0.36\webappsフォルダに置く
+ビルドで作成されたtarget\restful-server-example.warを\apache-tomcat-9.0.36\webappsフォルダに置く
