@@ -37,6 +37,7 @@ import ca.uhn.fhir.rest.annotation.Sort;
 import ca.uhn.fhir.rest.api.SortOrderEnum;
 import ca.uhn.fhir.rest.api.SortSpec;
 import ca.uhn.fhir.rest.param.DateRangeParam;
+import ca.uhn.fhir.rest.param.NumberParam;
 import ca.uhn.fhir.rest.param.ParamPrefixEnum;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.param.TokenParam;
@@ -84,9 +85,11 @@ public class PatientResourceProvider implements IResourceProvider {
 			@OptionalParam(name = Patient.SP_GENDER) TokenParam theGender,
 			@OptionalParam(name = Patient.SP_TELECOM) TokenParam theTelecom,
 			@OptionalParam(name = Patient.SP_ADDRESS) StringParam theAddress,
-			@Sort SortSpec theSort,
-			@Count Integer theCount
+			@OptionalParam(name = "_maxresults") NumberParam theMaxResults,
+			@Sort SortSpec theSort
 			) {
+
+		Integer theCount = theMaxResults != null ? theMaxResults.getValue().intValue() : null;
 
 		List<Patient> list = new ArrayList<Patient>();
 
