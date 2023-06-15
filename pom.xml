@@ -39,6 +39,13 @@
 			<version>${hapifhir_version}</version>
 		</dependency>
 
+		<!-- This dependency includes the HAPI FHIR Server Framework -->
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>hapi-fhir-validation</artifactId>
+			<version>${hapifhir_version}</version>
+		</dependency>
+
 		<!-- At least one "structures" JAR must also be included -->
 		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
